@@ -1,0 +1,12 @@
+{% extends 'landing/wrapper.html' %}
+{% block content %}
+<h2>Если у вас остались вопросы, свяжитесь с нами</h2>
+
+<table width="50%" cellspacing="2" border="1">
+    {% for val in values %}
+    <tr>
+        <td>{{ forloop.counter }} {{val}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

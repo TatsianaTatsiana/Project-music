@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+    <style type="text/css">
+table {border-collapse: collapse;
+  line-height: 1.1;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background:  radial-gradient(farthest-corner at 50% 50%, white, #DCECF8);
+  color: #0C213B;
+}
+th {
+  padding: 10px;
+  border: 1px solid #A9E2CC;
+}
+td {
+  font-size: 0.8em;
+  padding: 5px 7px;
+  border: 1px solid #A9E2CC;
+}
+
+table {
+  counter-reset: rowNumber -1;  /* счётчик с названием "rowNumber" работает в рамках класса */
+}
+table tr {
+  counter-increment: rowNumber;  /* при встрече тега tr счётчик с названием "rowNumber" увеличивается на единицу */
+}
+table tr td:first-child::before {
+  content: counter(rowNumber);  /* значение счётчика с названием "rowNumber" записывается в первую клетку строки */
+}
+    </style>
+</head>
+<body background="static/landing/bg.jpg">
+<div align='center'>
+        <a href="/">Главная страница</a>
+        <a href="/mission">Наша миссия</a>
+        <a href="/contact">Контакты</a>
+</div>
+<img src="{% static 'landing/basic.jpg' %}" width="300" height="200">
+<h2 style="color:Black"><b><i>“Where words fail, music speaks.”</i></b></h2>
+<h3 style="color:Grey" align="justify"><i>― Hans Christian Andersen</i></h3>
+{% block content %}
+{% endblock %}
+</body>
+<br>
+<br>
+<hr>
+    2019
+
+</html>

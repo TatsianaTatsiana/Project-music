@@ -1,0 +1,16 @@
+{% extends 'landing/wrapper.html' %}
+{% block content %}
+
+{% for elem in artists %}
+    <p><b>{{ elem.name }}</b></p>
+    <p><img src="{{ elem.image.url }}" width="90" height="90" style="margin-top:-2px;"/></p>
+<ul>
+    {% for song in elem.songs.all %}
+    <li>{{ song }}</li>
+{% endfor %}
+</ul>
+    {% endfor %}
+
+
+{% endblock %}
+
